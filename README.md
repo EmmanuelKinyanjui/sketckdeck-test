@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Pixabay Image Search Project - SketchDeck.ai
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Task
+ - Create a web app that allows users to search for images using the Pixabay API.
+ - Upon searching for images, the app should display a list of images that match the search query.
+ - The app should display the image title, image description, image URL, image author, and image published date.
+
+Additional: 
+- Add a landing page for the app that shows the editor's choice before someone can search for images.
+
 ## Available Scripts
 
-In the project directory, you can run:
+See package.json for scripts
 
-### `npm start`
+## API details
+- https://pixabay.com/api/docs/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Sample Response
+```
+Endpoint: https://pixabay.com/api/
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Response:
+{
+"total": 4692,
+"totalHits": 500,
+"hits": [
+    {
+        "id": 195893,
+        "pageURL": "https://pixabay.com/en/blossom-bloom-flower-195893/",
+        "type": "photo",
+        "tags": "blossom, bloom, flower",
+        "previewURL": "https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg"
+        "previewWidth": 150,
+        "previewHeight": 84,
+        "webformatURL": "https://pixabay.com/get/35bbf209e13e39d2_640.jpg",
+        "webformatWidth": 640,
+        "webformatHeight": 360,
+        "largeImageURL": "https://pixabay.com/get/ed6a99fd0a76647_1280.jpg",
+        "fullHDURL": "https://pixabay.com/get/ed6a9369fd0a76647_1920.jpg",
+        "imageURL": "https://pixabay.com/get/ed6a9364a9fd0a76647.jpg",
+        "imageWidth": 4000,
+        "imageHeight": 2250,
+        "imageSize": 4731420,
+        "views": 7671,
+        "downloads": 6439,
+        "likes": 5,
+        "comments": 2,
+        "user_id": 48777,
+        "user": "Josch13",
+        "userImageURL": "https://cdn.pixabay.com/user/2013/11/05/02-10-23-764_250x250.jpg",
+    },
+    {
+        "id": 73424,
+        ...
+    },
+    ...
+]
+}
+```
