@@ -1,7 +1,8 @@
+// src/components/LandingPage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import styles from './LandingPage.css';
+import { Container, Typography, Grid, Card, CardActionArea, CardMedia } from '@mui/material';
 
 const LandingPage = () => {
     const [editorsChoiceImages, setEditorsChoiceImages] = useState([]);
@@ -20,20 +21,36 @@ const LandingPage = () => {
     }, []);
 
     return (
-        <div className={styles.container}>
-            <h1>Welcome to the Pixabay Image Search</h1>
-            <p>Find beautiful images and photos from Pixabay.</p>
-            <Link to="/search">Start Searching</Link>
-            <div className={styles.imagesContainer}>
+        <Container>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
+                Welcome to the Pixabay Image Search
+            </Typography>
+            <Typography variant="h6" component="p" gutterBottom align="center">
+                Find beautiful images and photos from Pixabay.
+            </Typography>
+            <Typography variant="body1" align="center" paragraph>
+                <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>Start Searching</Link>
+            </Typography>
+            <Grid container spacing={3} justifyContent="center">
                 {editorsChoiceImages.map((image) => (
-                    <Link key={image.id} to={`/image/${image.id}`} className={styles.imageLink}>
-                        <img src={image.previewURL} alt={image.tags} className={styles.image} />
-                    </Link>
+                    <Grid item xs={12} sm={6} md={4} key={image.id}>
+                        <Link to={`/image/${image.id}`} style={{ textDecoration: 'none' }}>
+                            <Card>
+                                <CardActionArea>
+                                    <CardMedia
+                                        component="img"
+                                        alt={image.tags}
+                                        height="140"
+                                        image={image.previewURL}
+                                    />
+                                </CardActionArea>
+                            </Card>
+                        </Link>
+                    </Grid>
                 ))}
-            </div>
-        </div>
+            </Grid>
+        </Container>
     );
 };
 
 export default LandingPage;
-

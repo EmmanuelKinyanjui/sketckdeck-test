@@ -1,7 +1,8 @@
+// src/components/ImageDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import styles from './ImageDetails.css';
+import { Container, Typography, Card, CardMedia, CardContent } from '@mui/material';
 
 const ImageDetails = () => {
     const { id } = useParams();
@@ -16,19 +17,25 @@ const ImageDetails = () => {
         fetchImageDetails();
     }, [id]);
 
-    if (!imageDetails) return <div>Loading...</div>;
+    if (!imageDetails) return <Typography>Loading...</Typography>;
 
     return (
-        <div className={styles.detailsContainer}>
-            <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className={styles.image} />
-            <div className={styles.info}>
-                <p>Posted by:{imageDetails.user}</p>
-                <p>Tags:{imageDetails.tags}</p>
-                <p>Views: {imageDetails.views}</p>
-                <p>Downloads: {imageDetails.downloads}</p>
-                <p>Likes: {imageDetails.likes}</p>
-            </div>
-        </div>
+        <Container>
+            <Card>
+                <CardMedia
+                    component="img"
+                    image={imageDetails.largeImageURL}
+                    alt={imageDetails.tags}
+                />
+                <CardContent>
+                    <Typography variant="h5">Posted by: {imageDetails.user}</Typography>
+                    <Typography variant="h6">Tags: {imageDetails.tags}</Typography>
+                    <Typography variant="body2">Views: {imageDetails.views}</Typography>
+                    <Typography variant="body2">Downloads: {imageDetails.downloads}</Typography>
+                    <Typography variant="body2">Likes: {imageDetails.likes}</Typography>
+                </CardContent>
+            </Card>
+        </Container>
     );
 };
 
