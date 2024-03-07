@@ -1,0 +1,29 @@
+.searchContainer {
+    text-align: center;
+    margin: 20px;
+}
+
+.searchInput {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.searchButton {
+    padding: 10px;
+}
+
+.imagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imageLink {
+    margin: 10px;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

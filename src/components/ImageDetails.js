@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import styles from './ImageDetails.css';
 
 const ImageDetails = () => {
     const { id } = useParams();
@@ -18,12 +19,15 @@ const ImageDetails = () => {
     if (!imageDetails) return <div>Loading...</div>;
 
     return (
-        <div>
-            <img src={imageDetails.largeImageURL} alt={imageDetails.tags} />
-            <p>{imageDetails.tags}</p>
-            <p>Views: {imageDetails.views}</p>
-            <p>Downloads: {imageDetails.downloads}</p>
-            <p>Likes: {imageDetails.likes}</p>
+        <div className={styles.detailsContainer}>
+            <img src={imageDetails.largeImageURL} alt={imageDetails.tags} className={styles.image} />
+            <div className={styles.info}>
+                <p>Posted by:{imageDetails.user}</p>
+                <p>Tags:{imageDetails.tags}</p>
+                <p>Views: {imageDetails.views}</p>
+                <p>Downloads: {imageDetails.downloads}</p>
+                <p>Likes: {imageDetails.likes}</p>
+            </div>
         </div>
     );
 };
